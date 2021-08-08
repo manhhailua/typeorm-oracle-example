@@ -79,6 +79,16 @@ Full reference: https://oracle.github.io/node-oracledb/INSTALL.html#quickstart
 
 ### 2. Start Nodejs server
 
+Update [ormconfig.json](./ormconfig.json), change `host` field from `oracledb` to `localhost`.
+
+```
+{
+...
+  "host": "localhost",
+...
+}
+```
+
 Make sure your Nodejs environment has been correctly setup.
 
 ```shell
