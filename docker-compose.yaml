@@ -1,0 +1,22 @@
+version: "3.1"
+
+services:
+  oracledb:
+    image: oracle/database:11.2.0.2-xe
+    environment:
+      ORACLE_PWD: "GZfqmjYLt4Hj5sWb"
+    ports:
+      - "1521:1521"
+      - "8080:8080"
+    restart: unless-stopped
+    shm_size: 1g
+    volumes:
+      - oracledb_data:/u01/app/oracle/oradata
+
+  server:
+    build: .
+    depends_on:
+      - oracledb
+
+volumes:
+  oracledb_data:
