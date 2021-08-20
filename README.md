@@ -2,8 +2,7 @@
 
 ## Setup single instance OracleDB for development
 
-These steps are specific for OracleDB version 11.2. For other versions, the steps should be the same but the specific
-commands might differ.
+These steps are for OracleDB Express Editions.
 
 ### 1. Checkout submodules
 
@@ -13,6 +12,8 @@ git submodule update --init
 
 ### 2. Download OracleDB binary
 
+For Oracle 18c XE, skip this step.
+
 ```shell
 curl http://download.xskernel.org/soft/linux-rpm/oracle-xe-11.2.0-1.0.x86_64.rpm.zip \
   --output ./oracle-docker-images/OracleDatabase/SingleInstance/dockerfiles/11.2.0.2/oracle-xe-11.2.0-1.0.x86_64.rpm.zip
@@ -20,11 +21,19 @@ curl http://download.xskernel.org/soft/linux-rpm/oracle-xe-11.2.0-1.0.x86_64.rpm
 
 ### 3. Build OracleDB docker image
 
+Build OracleDB 11g XE
+
 ```shell
 ./oracle-docker-images/OracleDatabase/SingleInstance/dockerfiles/buildContainerImage.sh -x -v 11.2.0.2
 ```
 
 After this step, you should get an image named `oracle/database:11.2.0.2-xe` on your machine.
+
+Build OracleDB 18c XE
+
+```shell
+./oracle-docker-images/OracleDatabase/SingleInstance/dockerfiles/buildContainerImage.sh -x -v 18.4.0
+```
 
 Reference: https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/README.md#building-oracle-database-container-images
 

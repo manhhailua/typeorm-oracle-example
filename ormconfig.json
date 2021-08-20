@@ -1,10 +1,10 @@
 {
   "type": "oracle",
-  "host": "oracledb",
+  "host": "localhost",
   "username": "system",
-  "password": "GZfqmjYLt4Hj5sWb",
+  "password": "oracle_pwd",
   "port": 1521,
-  "sid": "XE",
+  "serviceName": "XEPDB1",
   "synchronize": true,
   "logging": false,
   "entities": [
